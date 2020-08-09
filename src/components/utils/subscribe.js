@@ -27,31 +27,49 @@ class Subscriptions extends Component {
     }
 
     saveSubscription = (email) => {
+
+        const resetState = () => {
+            this.setState({
+                email: '',
+                success: true,
+            });
+
+            this.clearMessages();
+        }
+
+        const alreadyInDB = () => {
+            this.setState({
+                    email: '',
+                    alreadyIn: true,
+                });
+            this.clearMessages();
+        }
+           
+
         async function fetchSub() {
                 const response = await axios.get(`${URL_SUBS}/?email=${email}`);
                 console.log(response.data);
                 
                 if( !response.data.length){
-                    const post_resp = await axios(URL_SUBS, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type':'application/json'
-                        },
-                        data: JSON.stringify({email})
-                    });
+                    try{
+                        const post_resp = await axios(URL_SUBS, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type':'application/json'
+                            },
+                            data: JSON.stringify({email})
+                            });
 
-                    /*
-                    this.setState({
-                        email: '',
-                        success: true,
-                    });
-                   
-                    /* 
-                    this.clearMessages();
-                    */
+                            resetState(); 
+
+                    }
+                    catch(error){
+                        console.log(error);
+                    }
+                    
                 }
                 else{
-                    // already in
+                    alreadyInDB();
                 }
         }
 
