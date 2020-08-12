@@ -222,6 +222,7 @@ footer {
 .block_item .top {
     position: relative;
     cursor: pointer;
+    height: 280px;
 }
 
 .block_item {
@@ -230,7 +231,7 @@ footer {
 
 .block_item .block_image {
     width: 100%;
-    height: 280px;
+    height: 100%;
     background-size: cover !important;
     background-position: center center !important;
 }
@@ -239,6 +240,7 @@ footer {
     text-decoration: none;
     color: inherit;
 }
+
 .block_item .top .veil {
     background: #000000;
     opacity:0.6;
@@ -250,7 +252,7 @@ footer {
 
 }
 .block_item .top:hover .veil {
-    opacity:0;
+    opacity: 1;
     transition: all 500ms ease-in-out;
 }
 .block_item .content {
