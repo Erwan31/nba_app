@@ -5,6 +5,7 @@ import Home from './components/home/index';
 import Footer from './components/teams/footer';
 import Header from './components/teams/header';
 import Article from './components/articles/index';
+import Teams from './components/teams/index';
 
 const Routes = () => {
     return ( 
@@ -12,6 +13,7 @@ const Routes = () => {
         <Header/>
             <Switch>
                 <Route path="/article/:id" component={Article}></Route>
+                <Route path="/teams" component={Teams}></Route>
                 <Route path="/" component={Home}></Route>
             </Switch>
         <Footer/>

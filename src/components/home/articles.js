@@ -20,12 +20,12 @@ const HomeArticles = () => {
     const showArticleBlocks = () => {
         
         const rows = [...Array(Math.ceil(articles.length/3))];
-        console.log('row', rows);
+        //console.log('row', rows);
         const articlesRows = rows.map( (row, i) =>
             articles.slice(i*3, i*3+3)
             );
 
-        console.log('articlesRows', rows);
+        //console.log('articlesRows', rows);
         
         const generatedArticles = articlesRows.map( (row, i) => (
             <div className="row" key={i}>
@@ -55,7 +55,7 @@ const HomeArticles = () => {
             </div>
         ));
         
-        console.log('generatedArticles', generatedArticles);
+        //console.log('generatedArticles', generatedArticles);
         return generatedArticles;
     }
 
