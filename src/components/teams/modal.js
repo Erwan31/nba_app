@@ -10,7 +10,7 @@ class MyModal extends Component {
         }
 
         this.handleOpenModal = this.handleOpenModal.bind(this);
-        this.closeCloseModal = this.handleCloseModal.bind(this);
+        this.handleCloseModal = this.handleCloseModal.bind(this);
     }
 
     handleOpenModal(){

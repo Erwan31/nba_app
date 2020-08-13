@@ -68,21 +68,23 @@ class Teams extends Component {
         return ( 
             <>
                 <div className="teams_component">
-                    <input 
+                    <div className="teams_input">
+                         <input 
                         type="text" 
                         placeholder="Search for a Team"
                         value={this.state.keyword}
                         onChange={ (event) => this.searchTerm(event)}
-                    ></input>
+                        ></input>
+                    </div>
                     <div className="container teams_container">
                         <TransitionGroup component="span">
                             {this.renderList(this.state.filtered)}
                         </TransitionGroup>
-                        <MyModal
-                            team={this.state.team}
-                            clearModal={this.clearModal()}
-                        />
                     </div>
+                    <MyModal
+                        team={this.state.team}
+                        clearModal={ () => this.clearModal()}
+                    />
                 </div>
             </>
          );
