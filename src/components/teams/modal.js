@@ -51,6 +51,23 @@ class MyModal extends Component {
                     <button onClick={this.handleCloseModal}>
                         Close Modal
                     </button>
+                    {
+                        this.props.team ?
+                        <div>
+                            <h3>{this.props.team.name}</h3>
+                            <br/>
+                            <div>
+                                <div 
+                                    dangerouslySetInnerHTML={{
+                                        __html: this.props.team.content
+                                    }}
+                                    className="modal_content"
+                                >
+                                </div>
+                            </div>
+                        </div>
+                        : null
+                    }
                 </Modal>
             </>
          );
